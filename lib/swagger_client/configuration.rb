@@ -127,6 +127,8 @@ module SwaggerClient
 
     attr_accessor :force_ending_format
 
+    # attr_accessor :auth_settings
+
     def initialize
       @scheme = 'https'
       @host = 'gate-spinnaker.devint.gcp.openx.org'
@@ -144,6 +146,7 @@ module SwaggerClient
       @inject_format = false
       @force_ending_format = false
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
+      @auth_settings = {}
 
       yield(self) if block_given?
     end

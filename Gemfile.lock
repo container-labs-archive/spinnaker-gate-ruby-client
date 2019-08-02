@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spinnaker-gate-ruby-client (1.0.0)
+    spinnaker-gate-ruby-client (1.0.2)
       json (~> 2.1, >= 2.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
 

@@ -29,13 +29,14 @@ module SwaggerClient
 
     # Initializes the ApiClient
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
-    def initialize(config = Configuration.default)
+    def initialize(config = Configuration.default, additional_headers = {})
       @config = config
       @user_agent = "Swagger-Codegen/#{VERSION}/ruby"
       @default_headers = {
         'Content-Type' => 'application/json',
         'User-Agent' => @user_agent
       }
+      @default_headers.merge(additional_headers)
     end
 
     def self.default
@@ -108,7 +109,8 @@ module SwaggerClient
         :ssl_verifyhost => _verify_ssl_host,
         :sslcert => @config.cert_file,
         :sslkey => @config.key_file,
-        :verbose => @config.debugging
+        :verbose => @config.debugging,
+        followlocation: true
       }
 
       # set custom cert, if provided

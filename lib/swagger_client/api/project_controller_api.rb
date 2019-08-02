@@ -104,6 +104,7 @@ module SwaggerClient
       header_params['Accept'] = @api_client.select_header_accept(['*/*'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params['Authorization'] ='Bearer ya29.GlxVB5lA5AJlwIUipnEz7gX9dNGyh4ebnROxQXl1jalz9TDvBxSQHuBVYis-LY7UkLm5futbUKNTLtyKVTR3fCyeUbYZFByEygJ7n2L2x73jTN40tgfdJ6HShFjCvg'
 
       # form parameters
       form_params = {}
